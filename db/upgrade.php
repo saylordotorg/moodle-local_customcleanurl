@@ -18,10 +18,9 @@
  * Upgrade steps for local_customcleanurl.
  *
  * @package    local_customcleanurl
+ * @copyright  2025 santoshtmp <https://santoshmagar.com.np/>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-defined('MOODLE_INTERNAL') || die();
 
 /**
  * Upgrade function for local_customcleanurl.
