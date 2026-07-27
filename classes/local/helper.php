@@ -225,7 +225,8 @@ class helper {
         // Check if PHP file exists in the path.
         if (str_contains($requestpath, '.php')) {
             $filepath = $CFG->dirroot . explode('.php', $requestpath)[0] . '.php';
-            if (file_exists($filepath)) {
+            $routerpath = $CFG->dirroot . '/local/customcleanurl/route.php';
+            if (file_exists($filepath) && realpath($filepath) !== realpath($routerpath)) {
                 $responsedata['filepath'] = $filepath;
                 $responsedata['urltype'] = 'phppath';
                 return $responsedata;

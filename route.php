@@ -67,7 +67,7 @@ if (!empty($responsedata['status'])) {
     foreach ($param as $key => $value) {
         $_GET[$key] = $value;
     }
-    if (is_file($filepath)) {
+    if (is_file($filepath) && realpath($filepath) !== realpath(__FILE__)) {
         chdir(dirname($filepath));
         require($filepath);
         exit;
