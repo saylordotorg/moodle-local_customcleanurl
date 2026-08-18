@@ -131,8 +131,13 @@ document.addEventListener('click', function (event) {
         }
         element = element.parentElement;
     }
-    if (element.getAttribute('href').charAt(0) == '#') {
-        element.href = '{$clean}' + element.getAttribute('href');
+    var href = element.getAttribute('href');
+    var iscontrol = element.getAttribute('role') === 'button'
+        || element.hasAttribute('data-action')
+        || element.hasAttribute('data-toggle')
+        || element.hasAttribute('data-bs-toggle');
+    if (href && href.charAt(0) == '#' && !iscontrol) {
+        element.href = '{$clean}' + href;
     }
 }, true);
 </script>
